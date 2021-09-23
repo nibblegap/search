@@ -19,11 +19,11 @@
         </style>
     </head>
     <body class="bg-gray-100 relative h-screen max-w-full">
-        <div class="flex items-center justify-center w-full h-full">
+        <div class="flex items-center justify-center w-full min-h-screen">
             <form data-aos="fade-up" method="GET" action="/search" class="flex item-center p-3 rounded-md min-w-input shadow hover:shadow-md relative bg-white">
                 <input type="text" name="q" class="h-full w-full focus:outline-none" placeholder="Search with out being tracked">
                 <button class="focus:outline-none" type="submit">
-                    <svg style="opacity: .7;" class="cursor-pointer ml-1 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <svg style="opacity: .5;" class="cursor-pointer ml-1 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
             </form>
         </div>
@@ -34,13 +34,19 @@
             </a>
         </div>
 
-        <section class="bg-white w-full" id="intro">
-            <h1>
+        <section class="bg-white w-full text-center pt-20" id="intro">
+            <h1 class="text-7xl opacity-75" data-aos="zoom-in">
                 Very customizeable
             </h1>
 
             <div class="flex w-full item-center justify-between"></div>
         </section>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>

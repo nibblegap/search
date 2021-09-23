@@ -22,12 +22,15 @@ echo $_GET['q'] ?></title>
     </head>
     <body class="relative h-screen max-w-full">
 
-        <!-- check if query parameter is blank -->
         <?php
+            // check if query parameter is blank
             if (empty($_GET['q'])) {
                 header('Location: /');
                 die();
             }
+
+            include(app_path().'/Scraper/main.php');
+
         ?>
 
         Search site : ?q = <?php echo $_GET['q'] ?>
