@@ -11,14 +11,16 @@
 	$htmloptions = TagFilter::GetHTMLOptions();
 
 	// Retrieve a URL (emulating Firefox by default).
-	$url = "http://google.com/search?q=".$_GET['q'];
+	$url = "http://google.com/search?q=".urlencode($_GET['q'])."&ie=UTF-8";
 	$web = new WebBrowser();
 	$result = $web->Process($url);
 
-    $results = array(
+    $final_data = array(
         'results' => []
     );
     $titles = array();
+    $descriptions = array();
+    $urls = array();
 
 	// Check for connectivity and response errors.
 	if (!$result["success"])
@@ -42,8 +44,7 @@
 	// Retrieve a pointer object to the root node.
 	$root = $html->Get();
 
-	// Find all anchor tags inside a div with a specific class.
-	// A useful CSS selector cheat sheet:  https://gist.github.com/magicznyleszek/809a69dd05e1d5f12d01
+	// find all titles
 	$_titles = $root->Find($title_selector);
 	foreach ($_titles as $title)
 	{
@@ -52,5 +53,63 @@
         }
 	}
 
-    print_r($titles);
+	// find all descriptions
+	$_descriptions = $root->Find($description_selector);
+	foreach ($_descriptions as $desc)
+	{
+        if (in_array('w1C3Le', $desc->Parent()->class) == false) {
+            array_push($descriptions, $desc->GetInnerHTML());
+        }
+	}
+
+	// find all urls
+	$_urls = $root->Find($url_selector);
+	foreach ($_urls as $url)
+	{
+
+        $url = $url->Parent();
+        array_push($urls, $url->href);
+	}
+
+
+    // corecting fuzzy data
+    $titles_len = sizeof($titles);
+    $descriptions_len = sizeof($descriptions);
+    $urls_len = sizeof($urls);
+
+    if ($titles_len < $urls_len and $titles_len < $descriptions_len) {
+        array_shift($urls);
+    } else if ($urls_len > $titles_len) {
+        array_shift($urls);
+    }
+
+    $urls_len = sizeof($urls);
+    $inacurate = $descriptions_len > sizeof(array_slice($urls, 1)) ? false : true;
+
+    $i = 0;
+	foreach ($urls as $item)
+	{
+
+        if (str_contains($item, "youtube.com") and $inacurate and $urls_len > 1) {
+            array_splice($urls, $i, 1);
+            array_splice($titles, $i, 1);
+            $i--;
+        }
+
+        $i++;
+	}
+
+    $i = 0;
+    foreach ($titles as $title)
+	{
+        array_push($final_data['results'], array(
+            'title' => $title,
+            'description' => $descriptions[$i],
+            'url' => $urls[$i]
+        ));
+
+        $i++;
+	}
+
+    echo json_encode($final_data);
 ?>
