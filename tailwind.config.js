@@ -10,9 +10,12 @@ module.exports = {
     minWidth: {
         '0': '0',
         'input': '500px',
-        '1/2': '50%',
-        '3/4': '75%',
-        'full': '100%',
+    },
+    fontSize: {
+        'title': '18px',
+    },
+    textColor: {
+        'staleBlue': '#1a0dab'
     }
   },
   variants: {

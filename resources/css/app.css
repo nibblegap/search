@@ -1,3 +1,121 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.result {
+    padding-right: 22px;
+    padding-bottom: 1.1rem;
+    padding-left: 22px;
+
+    width: 700px;
+}
+.result:first-child {
+    border-radius: 10px 10px 0 0;
+    padding-top: 1.2rem;
+}
+.result:last-child { border-radius: 0 0 10px 10px; }
+.result_desc hr {
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+    margin-bottom: 0;
+    margin-top: 15px;
+    display: none;
+}
+.result_desc table {
+    text-align: left;
+    width: -webkit-fill-available;
+}
+.result_desc .P1usbc {
+    display: table;
+    white-space: nowrap;
+    margin: 5px 0;
+    line-height: 1.58;
+    color: #9aa0a6;
+    min-width: 90%;
+}
+.result_desc .P1usbc .VNLkW {
+    display: table-row;
+    vertical-align: top;
+}
+.result_desc .P1usbc .i4vd5e,
+.result_desc .P1usbc .G1Rrjc {
+    display: table-cell;
+}
+.result_desc .P1usbc .k6DEPe {
+    margin-top: 10px;
+}
+.result_desc .N3nEGc {
+    background-color: #ddd;
+    float: left;
+    margin-top: 4px;
+    border-radius: 8px;
+    color: #fff;
+    position: relative;
+    max-height: 65px;
+}
+.result_desc .N3nEGc .ij69rd {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 8px;
+    padding: 5px 6px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.result_desc .YgpRwf:first-child {
+    margin-top: 5px;
+}
+.result_desc .YgpRwf {
+    display: table-row;
+    vertical-align: top;
+    overflow: hidden;
+}
+.result_desc .YgpRwf .wFMWsc {
+    display: table-cell;
+    vertical-align: bottom;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.result_desc .YgpRwf .wFMWsc:nth-child(2) {
+    padding-left: 15px;
+}
+.result_desc .HiHjCd {
+    margin-top: 6px;
+}
+.result_desc .YgpRwf .dvDNH {
+    font-weight: 500;
+    margin-right: 5px;
+}
+.result_desc .z1asCe {
+    pointer-events: none;
+    position: absolute !important;
+    right: 0;
+    color: #868b90;
+    top: 50%;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+}
+.result_desc .z1asCe svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+.result_desc .eJtrMc {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.result_desc .UgLoB {
+    position: relative;
+}
+.result_desc .FyYA1e {
+    margin-top: 5px;
+}
