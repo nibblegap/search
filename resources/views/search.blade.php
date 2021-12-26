@@ -52,10 +52,11 @@
                                 echo $url['host'];
                             @endphp
                         </a>
-                        <div style="color: #5a626d; font-size: 14px;" class="result_desc">
+                        <div style="color: #5a626d; font-size: 14px; result_desc">
                             @php echo $result['description']; @endphp
                         </div>
                     </div>
+
                 @endforeach
 
             </div>
