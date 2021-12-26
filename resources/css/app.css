@@ -13,7 +13,12 @@
     border-radius: 10px 10px 0 0;
     padding-top: 1.2rem;
 }
-.result:last-child { border-radius: 0 0 10px 10px; }
+.result:last-child {
+    border-radius: 0 0 10px 10px;
+}
+.result_desc a {
+    color: #1a0dab;
+}
 .result_desc hr {
     width: 100%;
     height: 1px;

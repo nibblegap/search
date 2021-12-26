@@ -16,7 +16,7 @@
             }
         </style>
     </head>
-    <body class="relative h-screen max-w-full">
+    <body class="bg-gray-100 relative h-screen max-w-full">
 
         @php
             // check if query parameter is blank
@@ -24,24 +24,31 @@
                 header('Location: /');
                 die();
             }
-
             include(app_path().'/Scraper/main.php');
             $results = parseResults();
         @endphp
 
-        <div>
-
+        <div class="items-center bg-white w-full flex h-24 mb-8">
+            <a href="/">
+                <img src='/favicon.ico' class="mr-2 w-10 h-10 ml-10">
+            </a>
+            <form data-aos="fade-up" method="GET" action="/search" class="flex w-690 ml-20 item-center p-3 rounded-md min-w-input border border-gray-300 hover:border-2 relative bg-white">
+                <input value="@php echo $_GET['q']; @endphp" type="text" name="q" class="h-full w-full focus:outline-none" placeholder="Search with out being tracked">
+              <button class="focus:outline-none" type="submit">
+                  <svg style="opacity: .5;" class="cursor-pointer ml-1 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              </button>
+          </form>
         </div>
 
-        <div class="bg-gray-100 w-full h-full">
+        <div class="w-full min-h-full">
 
-            <div class="ml-60">
+            <div class="ml-40">
 
                 @foreach ($results['results'] as $result)
 
                     <div class="bg-white result">
                         <a href="{{ $result['url'] }}" class="text-staleBlue flex items-center">
-                            <img src="/api/favicon?url={{ urlencode($result['url']) }}" class="mr-2 w-5 h-5">
+                            <img onerror='this.src = "/default.svg"' src="/api/favicon?url={{ urlencode($result['url']) }}" class="mr-2 w-5 h-5">
                             <div class="w-full cursor-pointer text-title whitespace-nowrap overflow-hidden block no-underline hover:underline">
                                 {{ $result['title'] }}
                             </div>
@@ -52,7 +59,7 @@
                                 echo $url['host'];
                             @endphp
                         </a>
-                        <div style="color: #5a626d; font-size: 14px; result_desc">
+                        <div style="color: #5a626d; font-size: 14px;" class="result_desc">
                             @php echo $result['description']; @endphp
                         </div>
                     </div>

@@ -104,7 +104,7 @@
 		{
 			array_push($final_data['results'], array(
 				'title' => $title,
-				'description' => $descriptions[$i],
+				'description' => str_replace("</em>", "</b>", str_replace("<em>", "<b>", $descriptions[$i])),
 				'url' => $urls[$i]
 			));
 

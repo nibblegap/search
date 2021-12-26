@@ -1,9 +1,9 @@
-require('./bootstrap');
+require("./bootstrap");
 // require("@wonoly/favicons");
 
 // window.onload = () => {
 
-    // Load all favicons
+// Load all favicons
 
 //     if (window.location.href.indexOf('/search') !== 1) {
 
