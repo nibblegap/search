@@ -7,9 +7,9 @@ module.exports = {
     darkMode: "class", // or 'media' or 'class'
     theme: {
         extend: {
-          width: {
-            '690': '690px',
-          }
+            width: {
+                690: "690px",
+            },
         },
         minWidth: {
             0: "0",

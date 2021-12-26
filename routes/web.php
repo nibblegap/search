@@ -13,20 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("/", function () {
+    return view("welcome");
 });
 
-Route::get('/search', function () {
-    return view('search');
+Route::get("/search", function () {
+    return view("search");
 });
 
-Route::get('/api/favicon', function () {
+Route::get("/api/favicon", function () {
     $scraper = new \Wonoly\IconScraper\Scraper();
-    $url = $_GET['url'];
+    $url = $_GET["url"];
 
     if (!empty($url) and filter_var($url, FILTER_VALIDATE_URL)) {
-
         $icons = $scraper->get($url);
 
         if (sizeof($icons) > 0) {
@@ -34,5 +33,5 @@ Route::get('/api/favicon', function () {
         }
     }
 
-    return redirect('/default.svg');
+    return redirect("/default.svg");
 });
