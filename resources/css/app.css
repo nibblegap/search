@@ -16,8 +16,9 @@
 .result:last-child {
     border-radius: 0 0 10px 10px;
 }
-.result_desc a {
-    color: #1a0dab;
+.result_desc {
+    color: #5a626d;
+    font-size: 15px;
 }
 .result_desc hr {
     width: 100%;
@@ -123,4 +124,9 @@
 }
 .result_desc .FyYA1e {
     margin-top: 5px;
+}
+
+.result a {
+    color: #7885bf;
+    font-weight: bold;
 }

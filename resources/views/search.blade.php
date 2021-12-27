@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.min.css') }}" rel="stylesheet">
 
         <title>Wonoly search: @php echo $_GET['q'] @endphp</title>
 
@@ -59,7 +59,7 @@
                                 echo $url['host'];
                             @endphp
                         </a>
-                        <div style="color: #5a626d; font-size: 14px;" class="result_desc">
+                        <div class="result_desc">
                             @php echo $result['description']; @endphp
                         </div>
                     </div>
