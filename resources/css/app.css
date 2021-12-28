@@ -4,9 +4,8 @@
 
 .result {
     padding-right: 22px;
-    padding-bottom: 1.1rem;
+    padding-bottom: 2rem;
     padding-left: 22px;
-
     width: 700px;
 }
 .result:first-child {
@@ -19,6 +18,7 @@
 .result_desc {
     color: #5a626d;
     font-size: 15px;
+    cursor: pointer;
 }
 .result_desc hr {
     width: 100%;
@@ -125,7 +125,10 @@
 .result_desc .FyYA1e {
     margin-top: 5px;
 }
-
+.result_desc a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
 .result a {
     color: #7885bf;
     font-weight: bold;

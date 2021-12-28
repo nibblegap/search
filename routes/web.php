@@ -21,17 +21,17 @@ Route::get("/search", function () {
     return view("search");
 });
 
-Route::get("/api/favicon", function () {
-    $scraper = new \Wonoly\IconScraper\Scraper();
-    $url = $_GET["url"];
+// Route::get("/api/favicon", function () {
+//     $scraper = new \Wonoly\IconScraper\Scraper();
+//     $url = $_GET["url"];
 
-    if (!empty($url) and filter_var($url, FILTER_VALIDATE_URL)) {
-        $icons = $scraper->get($url);
+//     if (!empty($url) and filter_var($url, FILTER_VALIDATE_URL)) {
+//         $icons = $scraper->get($url);
 
-        if (sizeof($icons) > 0) {
-            return redirect($icons[0]->getHref());
-        }
-    }
+//         if (sizeof($icons) > 0) {
+//             return redirect($icons[0]->getHref());
+//         }
+//     }
 
-    return redirect("/default.svg");
-});
+//     return redirect("/default.svg");
+// });
