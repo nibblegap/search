@@ -23,7 +23,7 @@
                     echo $url['host'];
                 @endphp
             </a>
-            <div class="result_desc" onauxclick="event.button != 1 ? window.location.href='{{ $result['url'] }}' : window.open('{{ $result['url'] }}', '_blank')">
+            <div class="result_desc" onclick="window.location.href='{{ $result['url'] }}'" onauxclick="if (event.button == 1) window.open('{{ $result['url'] }};', '_blank')">
                 @php echo $result['description']; @endphp
             </div>
         </div>
