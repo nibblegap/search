@@ -32,8 +32,8 @@
             <a href="/">
                 <img src='/favicon.ico' class="mr-2 w-10 h-10 ml-10">
             </a>
-            <form data-aos="fade-up" method="GET" action="/search" class="flex w-690 ml-20 item-center p-3 rounded-md min-w-input shadow hover:shadow-md relative bg-white">
-                <input value="@php echo $_GET['q']; @endphp" type="text" name="q" class="h-full w-full focus:outline-none" placeholder="Search with out being tracked">
+            <form data-aos="fade-up" method="GET" action="/search" class="flex w-690 ml-20 item-center p-3 rounded-md min-w-input shadow hover:shadow-md relative bg-gray-100">
+                <input value="@php echo $_GET['q']; @endphp" type="text" name="q" class="bg-gray-100 h-full w-full focus:outline-none" placeholder="Search with out being tracked">
                 <button class="focus:outline-none" type="submit">
                     <svg style="opacity: .5;" class="cursor-pointer ml-1 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
